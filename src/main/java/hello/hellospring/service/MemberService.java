@@ -8,11 +8,15 @@ import java.util.List;
 import java.util.Optional;
 
 public class MemberService {
-    final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
 
     /*
     회원가입
     */
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     public Long join(Member member) {
 
