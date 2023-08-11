@@ -1,5 +1,4 @@
 # Spring Study
-[📖Study] Java, Spring
 
 1. [23.08.04 ~ 23.08.11] [스프링 입문 - 코드로 배우는 스프링 부트, 웹MVC, DB접근 기술](https://gabang2.notion.site/1-afffcc39248c4598bac32fc1c3ec63be?pvs=4)
 2. [23.08.11 ~ 목표 : 23.08.18] 스프링 핵심 원리 - 기본편
