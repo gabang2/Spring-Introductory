@@ -15,21 +15,25 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig { // 환경 구성은 AppConfig가 다 한다.
     @Bean
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
     public DiscountPolicy discountPolicy() {
+        System.out.println("call AppConfig.discountPolicy");
         // return new FixDiscountPolicy();
         return new RateDiscountPolicy();
     }
