@@ -34,7 +34,7 @@ public class AppConfig { // 환경 구성은 AppConfig가 다 한다.
     @Bean
     public DiscountPolicy discountPolicy() {
         System.out.println("call AppConfig.discountPolicy");
-        // return new FixDiscountPolicy();
+        // return new FixDiscountPolicy(); 
         return new RateDiscountPolicy();
     }
 }
