@@ -5,7 +5,7 @@ import lombok.*;
 import javax.persistence.Embeddable;
 
 @Embeddable // JPA 내장 타입 느낌(ENUM느낌)
-@Getter
+@Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Address {
