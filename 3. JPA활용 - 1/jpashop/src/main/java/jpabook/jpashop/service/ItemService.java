@@ -5,10 +5,12 @@ import jpabook.jpashop.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class ItemService {
     private final ItemRepository itemRepository;
@@ -16,6 +18,7 @@ public class ItemService {
     /**
      * 상품 등록
      */
+    @Transactional
     public void saveItem(Item item) {
         itemRepository.save(item);
     }
