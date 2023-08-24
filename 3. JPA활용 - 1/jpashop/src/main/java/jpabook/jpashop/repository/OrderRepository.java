@@ -18,11 +18,7 @@ public class OrderRepository {
     // save
     @Transactional
     public void save(Order order) {
-        if (order.getId() == null) {
-            em.persist(order);
-        } else {
-            em.merge(order);
-        }
+        em.persist(order);
     }
 
     // findOne

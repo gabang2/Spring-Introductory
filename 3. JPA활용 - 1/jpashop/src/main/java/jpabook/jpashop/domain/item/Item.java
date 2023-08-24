@@ -21,6 +21,7 @@ public abstract class Item {
     private Long id;
     private String name;
     private int stockQuantity;
+    private int price;
     @OneToMany(mappedBy = "item")
     private List<OrderItem> orderItems;
     @ManyToMany(mappedBy = "items")
