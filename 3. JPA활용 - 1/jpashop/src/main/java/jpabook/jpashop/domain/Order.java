@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class Order {
     private Member member;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderItem> orderItems;
+    private List<OrderItem> orderItems = new ArrayList<>();
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "delivery_id")
@@ -41,6 +42,7 @@ public class Order {
         this.member = member;
         member.getOrders().add(this);
     }
+
 
     public void addOrderItem(OrderItem orderItem) {
         orderItems.add(orderItem);
@@ -57,7 +59,7 @@ public class Order {
         Order order = new Order();
         order.setMember(member);
         order.setDelivery(delivery);
-        for(OrderItem orderItem : orderItems) {
+        for(OrderItem orderItem:orderItems) {
             order.addOrderItem(orderItem);
         }
         order.setStatus(OrderStatus.ORDER);
