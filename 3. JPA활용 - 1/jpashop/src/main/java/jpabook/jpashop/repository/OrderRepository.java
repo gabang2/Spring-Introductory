@@ -99,8 +99,7 @@ public class OrderRepository {
     /**
      * Querydsl 으로 처리 <- 어떻게 컴파일 타임에 잘 해결을 할 수 있을까 고민해서 나온 결과
      */
-    public List<Order> findAll(OrderSearch orderSearch) {
-        return null;
-    }
+//    public List<Order> findAll(OrderSearch orderSearch) {
+//    }
 
 }
