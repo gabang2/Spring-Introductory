@@ -20,6 +20,8 @@ public class Member {
     private String name;
     @Embedded // embedded또는 Embeddable 둘 중 하나만 쓰면 된다!
     private Address address;
+
+    @JsonIgnore
     @OneToMany(mappedBy = "member") // 연관관계의 주인이 아니다.(난 거울일 뿐이야 ! 읽기 전용임)
     private List<Order> orders = new ArrayList<>();
 }
